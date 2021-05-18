@@ -1,12 +1,13 @@
 import React from 'react';
-import App from './app';
 
 const NamesList = (props) => {
     return (
-        <div className="names-list">
-            <ol>
-                
-            </ol>
-        </div>
+        <ol>
+            {props.names.map((name)=>
+            <li>{name}</li>
+            )}
+        </ol>
     );
 }
+
+export default NamesList;
