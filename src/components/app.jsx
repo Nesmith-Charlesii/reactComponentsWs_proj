@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DisplayName from './DisplayName/displayName';
 import NamesList from './NamesList/namesList';
 import AlertUser from './AlertUser/alertUser';
+import SuperheroTable from './SuperheroTable/superHeroTable';
 
 class App extends Component {
     constructor(props) {
@@ -15,6 +16,26 @@ class App extends Component {
                 'Aaron', 
                 'Tory', 
                 'Kelly'
+            ],
+            superheroes: [
+                {
+                    superheroId: 1,
+                    name: 'Batman',
+                    primaryAbility: 'Wealthy',
+                    secondaryAbility: 'Rich'
+                },
+                {   
+                    superheroId: 2,
+                    name: 'Superman',
+                    primaryAbility: 'Super Strength',
+                    secondaryAbility: 'Fly'
+                },
+                {
+                    superheroId: 3,
+                    name: 'Spiderman',
+                    primaryAbility: 'Spider senses',
+                    secondaryAbility: 'Shoots web'
+                }
             ]
         }
     }
@@ -25,10 +46,18 @@ class App extends Component {
 
     render() {
         return (
-            <div className='container-fluid'>
+            <div className='container'>
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
-                <NamesList names={this.state.names}></NamesList>
-                <AlertUser alert={() => this.Alert()}/>
+                <div className="row my-5">
+                    <div className="col">
+                        <NamesList names={this.state.names}></NamesList>
+                        <br></br>
+                        <AlertUser alert={() => this.Alert()}/>
+                    </div>
+                    <div className="col">
+                        <SuperheroTable superheroes={this.state.superheroes} />
+                    </div>
+                </div>
             </div>
         )
     }
