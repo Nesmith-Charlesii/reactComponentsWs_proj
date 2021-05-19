@@ -3,7 +3,7 @@ import './superHeroTable.css';
 
 const SuperheroTable = (props) => {
     return (
-        <table className="table">
+        <table className="table" id="table">
             <thead>
                 <tr>
                     <th>Superhero Id</th>

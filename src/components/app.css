@@ -2,7 +2,8 @@ body {
     overflow: hidden;
 }
 
-.container-fluid {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+#container-fluid {
+    padding-right: 0;
+    padding-left: 0;
 }
+

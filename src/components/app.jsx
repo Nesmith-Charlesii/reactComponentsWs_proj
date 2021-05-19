@@ -46,24 +46,38 @@ class App extends Component {
         alert("devCodeCamp");
     } 
 
-    Add_Hero = () => {
-        return(
+    Add = (input) => {
+        this.state.superheroes.push()
+    }
 
-        );
+    handleSubmit(event) {
+        alert("New hero added");
+        //prevent default form behavior
+        event.preventDefault();
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid" id="container-fluid">
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
-                <div className="row my-5">
+                <div className="row" id="top-row">
                     <div className="col-6">
-                        <NamesList names={this.state.names}></NamesList>
-                        <br/>
-                        <AlertUser alert={() => this.Alert()}/>
+                        <SuperheroCreateForm onSubmit={(event) => this.handleSubmit(event)} />
                     </div>
-                    <div className="col-4">
+                    <div className="col-6">
                         <SuperheroTable superheroes={this.state.superheroes} />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col d-flex flex-column align-items-center">
+                        <NamesList names={this.state.names}></NamesList>
+                        <AlertUser alert={() => this.Alert()}/>
                     </div>
                 </div>
             </div>

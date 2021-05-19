@@ -1,0 +1,10 @@
+.superheroCreateForm {
+    margin-top: 15vh;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30vw;
+}
+
+label {
+    margin-bottom: 10px;
+}
