@@ -1,8 +1,9 @@
 import React from 'react';
+import './superHeroTable.css';
 
 const SuperheroTable = (props) => {
     return (
-        <table>
+        <table className="table">
             <thead>
                 <tr>
                     <th>Superhero Id</th>
@@ -12,7 +13,7 @@ const SuperheroTable = (props) => {
                 </tr>
             </thead>
             {props.superheroes.map((hero) => 
-            <tr>
+            <tr className = "text-center">
                 <td>{hero.superheroId}</td>
                 <td>{hero.name}</td>
                 <td>{hero.primaryAbility}</td>

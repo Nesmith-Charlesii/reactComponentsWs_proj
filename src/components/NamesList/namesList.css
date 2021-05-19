@@ -1,0 +1,5 @@
+.name-list ol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

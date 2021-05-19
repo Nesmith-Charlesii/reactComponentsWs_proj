@@ -3,6 +3,7 @@ import DisplayName from './DisplayName/displayName';
 import NamesList from './NamesList/namesList';
 import AlertUser from './AlertUser/alertUser';
 import SuperheroTable from './SuperheroTable/superHeroTable';
+import './app.css';
 
 class App extends Component {
     constructor(props) {
@@ -46,15 +47,15 @@ class App extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className="container-fluid">
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <div className="row my-5">
-                    <div className="col">
+                    <div className="col-6">
                         <NamesList names={this.state.names}></NamesList>
-                        <br></br>
+                        <br/>
                         <AlertUser alert={() => this.Alert()}/>
                     </div>
-                    <div className="col">
+                    <div className="col-4">
                         <SuperheroTable superheroes={this.state.superheroes} />
                     </div>
                 </div>

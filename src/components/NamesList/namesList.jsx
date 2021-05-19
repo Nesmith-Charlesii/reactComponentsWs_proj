@@ -1,12 +1,15 @@
 import React from 'react';
+import './namesList.css';
 
 const NamesList = (props) => {
     return (
-        <ol>
-            {props.names.map((name)=>
-            <li>{name}</li>
-            )}
-        </ol>
+        <div className="name-list">
+            <ol>
+                {props.names.map((name)=>
+                <li>{name}</li>
+                )}
+            </ol>
+        </div>
     );
 }
 

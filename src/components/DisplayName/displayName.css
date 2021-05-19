@@ -1,0 +1,8 @@
+.display-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(70,70,70);
+    background-color: rgb(20, 20, 20);
+    font-family: arial;
+}
