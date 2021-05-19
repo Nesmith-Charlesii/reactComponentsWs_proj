@@ -3,6 +3,7 @@ import DisplayName from './DisplayName/displayName';
 import NamesList from './NamesList/namesList';
 import AlertUser from './AlertUser/alertUser';
 import SuperheroTable from './SuperheroTable/superHeroTable';
+import SuperheroCreateForm from './SuperheroCreateForm/superHeroCreateForm';
 import './app.css';
 
 class App extends Component {
@@ -44,6 +45,12 @@ class App extends Component {
     Alert = () => {
         alert("devCodeCamp");
     } 
+
+    Add_Hero = () => {
+        return(
+
+        );
+    }
 
     render() {
         return (
