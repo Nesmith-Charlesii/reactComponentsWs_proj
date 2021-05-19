@@ -51,9 +51,9 @@ class App extends Component {
     }
 
     handleSubmit(event) {
-        alert("New hero added");
         //prevent default form behavior
         event.preventDefault();
+        alert("New hero added");
     }
 
     handleChange(event) {
@@ -68,7 +68,7 @@ class App extends Component {
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <div className="row" id="top-row">
                     <div className="col-6">
-                        <SuperheroCreateForm onSubmit={(event) => this.handleSubmit(event)} />
+                        <SuperheroCreateForm onSubmit= {(event) => this.handleSubmit(event)} onChange= {(event) => this.handleChange(event)} />
                     </div>
                     <div className="col-6">
                         <SuperheroTable superheroes={this.state.superheroes} />
