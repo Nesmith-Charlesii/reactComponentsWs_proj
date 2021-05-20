@@ -70,6 +70,7 @@ class App extends Component {
                 <div className="row">
                     <div className="col d-flex flex-column align-items-center">
                         <NamesList names={this.state.names}></NamesList>
+                        {/*bind alert function to this app*/}
                         <AlertUser alert={() => this.Alert()}/>
                     </div>
                 </div>
