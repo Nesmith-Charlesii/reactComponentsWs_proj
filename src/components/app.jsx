@@ -38,7 +38,13 @@ class App extends Component {
                     primaryAbility: 'Spider senses',
                     secondaryAbility: 'Shoots web'
                 }
-            ]
+            ],
+            input: {
+                superheroId: Number,
+                name: '',
+                primaryAbility: '',
+                secondaryAbility: ''
+            }
         }
     }
 
@@ -47,7 +53,7 @@ class App extends Component {
     } 
 
     Add = (input) => {
-        this.state.superheroes.push()
+        console.log('add is working');
     }
 
     handleSubmit(event) {
@@ -59,7 +65,8 @@ class App extends Component {
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
-        })
+        });
+        console.log(event.target.value);
     }
 
     render() {
@@ -68,7 +75,7 @@ class App extends Component {
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <div className="row" id="top-row">
                     <div className="col-6">
-                        <SuperheroCreateForm onSubmit= {(event) => this.handleSubmit(event)} onChange= {(event) => this.handleChange(event)} />
+                        <SuperheroCreateForm superheroId={this.state.input.superheroId} name={this.state.input.name} primaryAbility={this.state.input.primaryAbility} secondaryAbility={this.state.input.secondaryAbility} onSubmit= {(event) => this.handleSubmit(event)} onChange= {(event) => this.handleChange(event)} onClick={() => this.Add()} />
                     </div>
                     <div className="col-6">
                         <SuperheroTable superheroes={this.state.superheroes} />
