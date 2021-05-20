@@ -38,13 +38,7 @@ class App extends Component {
                     primaryAbility: 'Spider senses',
                     secondaryAbility: 'Shoots web'
                 }
-            ],
-            input: {
-                superheroId: Number,
-                name: '',
-                primaryAbility: '',
-                secondaryAbility: ''
-            }
+            ]
         }
     }
 
@@ -52,21 +46,13 @@ class App extends Component {
         alert("devCodeCamp");
     } 
 
-    Add = (input) => {
-        console.log('add is working');
-    }
-
-    handleSubmit(event) {
-        //prevent default form behavior
-        event.preventDefault();
-        alert("New hero added");
-    }
-
-    handleChange(event) {
+    addSuperhero = (hero) => {
+        //update superheroes array
         this.setState({
-            [event.target.name]: event.target.value
-        });
-        console.log(event.target.value);
+            //grabs all data from superheroes array, appends new hero to array
+            superheroes: [...this.state.superheroes, hero]
+        })
+        this.state.superheroes.push(hero);
     }
 
     render() {
@@ -75,7 +61,7 @@ class App extends Component {
                 <DisplayName firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <div className="row" id="top-row">
                     <div className="col-6">
-                        <SuperheroCreateForm superheroId={this.state.input.superheroId} name={this.state.input.name} primaryAbility={this.state.input.primaryAbility} secondaryAbility={this.state.input.secondaryAbility} onSubmit= {(event) => this.handleSubmit(event)} onChange= {(event) => this.handleChange(event)} onClick={() => this.Add()} />
+                        <SuperheroCreateForm addSuperhero={(hero) => this.addSuperhero(hero)} />
                     </div>
                     <div className="col-6">
                         <SuperheroTable superheroes={this.state.superheroes} />
